@@ -13,13 +13,13 @@ options=("Company" "Course Coordinator" "Student" "Quit")
 select opt in "${options[@]}"
 do
 	case $opt in
-    "Company")
+	"Company")
 		company;;
-   	"Course Coordinator")
+	"Course Coordinator")
 		courseCoordinator;;
 	"Student")
 		student;;
-    "Quit")
+	"Quit")
 		exit;;
 	*)
 		echo "You are an alien.";;
