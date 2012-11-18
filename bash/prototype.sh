@@ -1,27 +1,118 @@
 #!/bin/bash
+
+options=("Company" "Course Coordinator" "Student" "Quit")
+compopt=("Add new advertisement" "Amend application" "Quit")
+studopt=("View advertisements" "Declare placement success" "Quit")
+cocoopt=("View pending advertisements" "View new student declarations" "Quit")
+
 function company {
-	echo "You are a company."
+    echo "You are a company."
+    PS3="What do you wish to do, Company? "
+    while(true) do
+    select opt in "${compopt[@]}"
+    do 
+	case $opt in
+	    "Add new advertisement")
+		clear
+		echo "This is where you can add shit"
+		break;;
+	    "Amend application")
+		clear
+		echo "This is where you can amend shit"
+		break;;
+	    "Quit")
+		clear
+		echo "Logged out Company"
+		PS3="Who are you? "
+		return;;
+	    *)
+		echo "You are an alien"
+		break;;
+	esac
+    done
+    done
 }
 function courseCoordinator {
-	echo "You are a course coordinator."
+    echo "You are a Course Coordinator."
+    PS3="What do you wish to do, Course Coordinator? "
+    while(true) do
+    select opt in "${cocoopt[@]}"
+    do 
+	case $opt in
+	    "View pending advertisements")
+		clear
+		echo "This is where you can view pending shit"
+		break;;
+	    "View new student declarations")
+		clear
+		echo "This is where you can see shithot students"
+		break;;
+	    "Quit")
+		clear
+		echo "Logged out Course Coordinator"
+		PS3="Who are you? "
+		return;;
+	    *)
+		echo "You are an alien"
+		break;;
+	esac
+    done
+    done
 }
 function student {
-	echo "You are a student."
+    echo "You are a student."
+    PS3="What do you wish to do, Student? "
+    while(true) do
+    select opt in "${studopt[@]}"
+    do 
+	case $opt in
+	    "View advertisements")
+		clear
+		echo "This is where you can view shit"
+		break;;
+	    "Declare placement success")
+		clear
+		echo "This is where you can say you're shithot"
+		break;;
+	    "Quit")
+		clear
+		echo "Logged out Student"
+		PS3="Who are you? "
+		return;;
+	    *)
+		echo "You are an alien"
+		break;;
+	esac
+    done
+    done
+
 }
+
 PS3="Who are you? "
-options=("Company" "Course Coordinator" "Student" "Quit")
+
+
+while(true) do
 select opt in "${options[@]}"
 do
-	case $opt in
+    case $opt in
 	"Company")
-		company;;
+	    clear
+	    company
+	    break;;
 	"Course Coordinator")
-		courseCoordinator;;
+	    clear
+	    courseCoordinator
+	    break;;
 	"Student")
-		student;;
+	    clear
+	    student
+	    break;;
 	"Quit")
-		exit;;
+	    clear
+	    exit;;
 	*)
-		echo "You are an alien.";;
-	esac
+	    echo "You are an alien."
+	    break;;
+    esac
+done
 done
