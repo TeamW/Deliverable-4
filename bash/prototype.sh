@@ -89,10 +89,8 @@ function student {
     done
 
 }
-
+clear
 PS3="Who are you? "
-
-
 while(true) do
 select opt in "${options[@]}"
 do
