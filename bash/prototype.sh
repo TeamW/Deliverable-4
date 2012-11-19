@@ -7,6 +7,8 @@ cocoopt=("View pending advertisements" "View new student declarations" "Quit")
 
 function company {
     echo "You are a company."
+    number=$RANDOM
+    echo "here's a random number $number"
     PS3="What do you wish to do, Company? "
     while(true) do
     select opt in "${compopt[@]}"
