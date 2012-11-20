@@ -1,4 +1,6 @@
 d4.pdf
+#*#
+*.#
 *.aux
 *.bbl
 *.blg
