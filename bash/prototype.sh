@@ -4,6 +4,7 @@ options=("Company" "Course Coordinator" "Student" "Quit")
 compopt=("Add new advertisement" "Amend application" "Quit")
 studopt=("View advertisements" "Declare placement success" "Quit")
 cocoopt=("View pending advertisements" "View new student declarations" "Quit")
+advert=""
 
 function company {
     echo "You are a company."
@@ -17,7 +18,9 @@ function company {
 	case $opt in
 	    "Add new advertisement")
 		clear
-		echo "This is where you can add shit"
+		echo "This is where you can add shit."
+		read -p " Add an advert now: " -e advert
+		echo $advert
 		break;;
 	    "Amend application")
 		clear
