@@ -6,6 +6,19 @@ studopt=("View advertisements" "Declare placement success" "Quit")
 cocoopt=("View pending advertisements" "View new student declarations" "Quit")
 advert=""
 
+function addAdvert {
+    echo "Add the text of your advertisement here"
+    echo "When finised please type CTRL+d"
+    touch $adno.sesp
+    while read line
+    do
+	echo $line>>$adno.sesp
+    done
+    mv $adno.sesp .sespadv/
+    adno=$((adno+1))
+    echo $adno>.sesp.conf
+}
+
 function company {
     echo "You are a company."
     number=$RANDOM
@@ -19,8 +32,7 @@ function company {
 	    "Add new advertisement")
 		clear
 		echo "This is where you can add shit."
-		read -p " Add an advert now: " -e advert
-		echo $advert
+		addAdvert
 		break;;
 	    "Amend application")
 		clear
@@ -94,6 +106,11 @@ function student {
 
 }
 clear
+for line in $(cat .sesp.conf)
+do
+adno=$line
+echo $adno
+done<.sesp.conf
 PS3="Who are you? "
 while(true) do
 select opt in "${options[@]}"

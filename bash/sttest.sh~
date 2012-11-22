@@ -1,6 +1,0 @@
-#!/bin/bash
-
-while read -e line
-do 
-echo $word>>output.text
-done
