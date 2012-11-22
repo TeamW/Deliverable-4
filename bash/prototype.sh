@@ -8,7 +8,8 @@ advert=""
 
 function addAdvert {
     echo "Add the text of your advertisement here"
-    echo "When finised please type CTRL+d"
+    echo "When finised please type CTRL+d on a new line:
+"
     touch $adno.sesp
     while read line
     do
@@ -22,7 +23,7 @@ function addAdvert {
 function company {
     echo "You are a company."
     number=$RANDOM
-	fixednumber=$(($number%3))
+    fixednumber=$(($number%3))
     echo "here's a random number $fixednumber"
     PS3="What do you wish to do, Company? "
     while(true) do
@@ -31,7 +32,6 @@ function company {
 	case $opt in
 	    "Add new advertisement")
 		clear
-		echo "This is where you can add shit."
 		addAdvert
 		break;;
 	    "Amend application")
