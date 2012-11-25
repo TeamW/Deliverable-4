@@ -86,7 +86,7 @@ function student {
 	case $opt in
 	    "View advertisements")
 		clear
-		echo "This is where you can view shit"
+		viewAdvertisements
 		break;;
 	    "Declare placement success")
 		clear
@@ -105,6 +105,25 @@ function student {
     done
 
 }
+function viewAdvertisements {
+	fileList=""
+	for file in $(ls .sespadv)
+	do
+		fileList="$fileList .sespadv/$file"
+	done
+	array=($fileList)
+	size=${#array[@]}
+	echo $size
+	for file in ${array[*]}
+	do
+		while read line; do
+			echo "$line"
+		done < $file
+		echo '
+Do you want to apply for this? If so, please contact the company.
+'
+	done
+}
 function pendingAdvertisements {
 	for file in $(ls .sesppend)
 	do
@@ -115,14 +134,14 @@ function pendingAdvertisements {
 		do
 		case $opt in
 			"Accept")
-			clear
 			mv ".sesppend/$file" ".sespadv/$file"
 			break;;
 			"Decline")
-			echo "will probably delete"
+			mv ".sesppend/$file" ".sespdecl/$file"
+			clear
 			break;;
 			*)
-			echo "stupid user"
+			echo "Sorry your option is unrecognised."
 			break;;
 		esac
 		done
