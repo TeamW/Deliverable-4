@@ -4,6 +4,7 @@ options=("Company" "Course Coordinator" "Student" "Quit")
 compopt=("Add new advertisement" "Amend application" "Quit")
 studopt=("View advertisements" "Declare placement success" "Quit")
 cocoopt=("View pending advertisements" "View new student declarations" "Quit")
+addopt=("Accept" "Decline")
 advert=""
 
 function addAdvert {
@@ -25,7 +26,7 @@ function company {
     PS3="What do you wish to do, Company? "
     while(true) do
     select opt in "${compopt[@]}"
-    do 
+    do
 	case $opt in
 	    "Add new advertisement")
 		clear
@@ -54,11 +55,11 @@ function courseCoordinator {
     PS3="What do you wish to do, Course Coordinator? "
     while(true) do
     select opt in "${cocoopt[@]}"
-    do 
+    do
 	case $opt in
 	    "View pending advertisements")
 		clear
-		echo "This is where you can view pending shit"
+        pendingAdvertisements
 		break;;
 	    "View new student declarations")
 		clear
@@ -81,7 +82,7 @@ function student {
     PS3="What do you wish to do, Student? "
     while(true) do
     select opt in "${studopt[@]}"
-    do 
+    do
 	case $opt in
 	    "View advertisements")
 		clear
@@ -103,6 +104,29 @@ function student {
     done
     done
 
+}
+function pendingAdvertisements {
+	for file in $(ls .sesppend)
+	do
+		while read line; do
+			echo "$line"
+		done < ".sesppend/$file"
+		select opt in "${addopt[@]}"
+		do
+		case $opt in
+			"Accept")
+			clear
+			mv ".sesppend/$file" ".sespadv/$file"
+			break;;
+			"Decline")
+			echo "will probably delete"
+			break;;
+			*)
+			echo "stupid user"
+			break;;
+		esac
+		done
+	done
 }
 clear
 for line in $(cat .sesp.conf)
@@ -131,7 +155,7 @@ do
 	    clear
 	    exit;;
 	*)
-	    echo "You are an alien."
+	    echo "Sorry this command was not recognised."
 	    break;;
     esac
 done
