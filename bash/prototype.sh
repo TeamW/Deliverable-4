@@ -15,16 +15,13 @@ function addAdvert {
     do
 	echo $line>>$adno.sesp
     done
-    mv $adno.sesp .sespadv/
+    mv $adno.sesp .sesppend/
     adno=$((adno+1))
     echo $adno>.sesp.conf
 }
 
 function company {
     echo "You are a company."
-    number=$RANDOM
-    fixednumber=$(($number%3))
-    echo "here's a random number $fixednumber"
     PS3="What do you wish to do, Company? "
     while(true) do
     select opt in "${compopt[@]}"
@@ -33,6 +30,8 @@ function company {
 	    "Add new advertisement")
 		clear
 		addAdvert
+		clear
+		echo Advert added successfully.
 		break;;
 	    "Amend application")
 		clear
@@ -44,7 +43,7 @@ function company {
 		PS3="Who are you? "
 		return;;
 	    *)
-		echo "You are an alien"
+		echo "Sorry, this command was not recognised"
 		break;;
 	esac
     done
@@ -71,7 +70,7 @@ function courseCoordinator {
 		PS3="Who are you? "
 		return;;
 	    *)
-		echo "You are an alien"
+		echo "Sorry, this command was not recognised"
 		break;;
 	esac
     done
@@ -98,7 +97,7 @@ function student {
 		PS3="Who are you? "
 		return;;
 	    *)
-		echo "You are an alien"
+		echo "Sorry, this command was not recognised"
 		break;;
 	esac
     done
