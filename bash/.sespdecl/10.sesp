@@ -1,0 +1,69 @@
+Internship Project Title:  User Interaction Architecture for High Throughput Analysis Pipelines
+
+Supervisor: Peter Saffrey
+
+Contact email: psaffrey@illumina.com
+
+As DNA sequencing throughput increases, the computational component of genome pipelines
+
+becomes an increasing bottle-neck. In sequencing bioinformatics, there is increasing emphasis on
+
+improving efficiency by automating existing pipelines [1].
+
+Illumina's automation solution IDAS (Internal Data Analysis System) is used to configure analysis
+
+across tens of projects and hundreds of sequencing flowcells to deliver up to three hundred analysed
+
+whole genome and whole exome sequences per quarter.  Analysis is configured and submitted to a
+
+Sun Grid Engine (SGE) compute cluster, with data written to Isilon high performance storage.
+
+Dashboards and web reports provide logging and tracking information.
+
+IDAS is mostly used on a one-sample one-analysis basis, which means configuration can be largely
+
+static for an individual sample. This enables many hundreds of samples to be run with the same
+
+controlled settings. However, in more exploratory work there is also a need to analyse a sample
+
+more than once with several different settings or to customize analysis in other ways.
+
+This project would involve designing interaction components to improve IDAS' flexibility and allow
+
+custom analysis with the potential to apply many analysis settings to the same sample. The work
+
+would consist of:
+
+- Understanding the way in which IDAS configures projects and samples and how this is used
+
+to start analysis workflows, including its interaction with SGE.
+
+- Designing configuration to allow fine-grained control of analysis.
+
+- Designing user interfaces, possibly based on the web, to generate these configurations.
+
+- Testing deployment models to minimize disruption to the existing production system.
+
+This is an exciting opportunity to work with a production-grade bioinformatics automation pipeline
+
+in a collaborative environment of bioinformaticians, analysts, software engineers and lab scientists.  
+
+The internship is expected to start on 3
+
+rd
+
+of June and last for 10 weeks.  We offer a competitive pay
+
+rate and can assist with locating nearby accommodation.  
+
+The successful candidate will have a strong software engineering background with good knowledge
+
+of Python and XML. Experience of developing user interfaces on the web and SGE would be
+
+desirable. Knowledge of sequencing and genomics would be beneficial but not essential.
+
+Applications should send a CV and cover letter to Peter Saffrey (psaffrey@illumina.com) by 1
+
+st
+
+December 2013.
