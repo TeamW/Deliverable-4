@@ -1,5 +1,20 @@
 #!/bin/bash
 
+########################################################
+##
+## Team W Prototype of Internship Management System.
+##
+##
+## Required filestructure.
+## -----------------------
+## .../prototype.sh
+## .../.sesp.conf    Contains persistent data for system.
+## .../.sesppend/    Folder for pending advertisements
+## .../.sespdecl/    Folder for deleted advertisements
+## .../.sespadv/     Folder for current advertisements
+##
+########################################################
+
 options=("Company" "Course Coordinator" "Student" "Quit")
 compopt=("Add new advertisement" "Amend advertisement" "Quit")
 studopt=("View advertisements" "Declare placement success" "Quit")

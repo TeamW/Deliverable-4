@@ -1,0 +1,155 @@
+\begin{UseCaseTemplate}
+\UseCaseLabel{Student Logs into system}
+\UseCaseDescription{A student from the University of Glasgow
+  interested in applying for a summer placement/internship gains
+  access to the system by logging in.}
+\UseCaseRationale{A student should be able to log into the
+  system. This gives the system added protection and privacy to those
+  who should not have access to the system.}
+\UseCasePriority{High}
+\UseCaseStatus{}
+\UseCaseActors{Student}
+\UseCaseExtensions{}
+\UseCaseIncludes{}
+\UseCaseConditions{}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{Successful log in, Unsuccessful log in.}
+\UseCaseRisks{Unable to link with GUID log in which may mean students
+  have to enrol for service. }
+\UseCaseUserInterface{Log in screen.}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Notification of new placement}
+\UseCaseDescription{When a new placement is accepted by the course
+  coordinator, all student in Level 3 CS should be notified of it by 
+  email.}
+\UseCaseRationale{A useful feature to aid CS students in their search
+  for a placement}
+\UseCasePriority{Medium}
+\UseCaseStatus{Uncomplete}
+\UseCaseActors{Student, Course Coordinator}
+\UseCaseExtensions{}
+\UseCaseIncludes{}
+\UseCaseConditions{}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{Notification Sent}
+\UseCaseRisks{Handeling the response from an email being sent to a 
+  non-existent email address or to an email address that causes a 
+  bounceback/send fail message. A student neglecting to view emails
+  sent by the service due to mass emails sent when many advertisements
+  go live on one day.}
+\UseCaseUserInterface{Course Coordinator Advert View Screen.}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Student Views Application}
+\UseCaseDescription{A student of the School of Computing Science can
+  view a list of placements/internships and also see more details of a
+  specific placement/internship}
+\UseCaseRationale{A student will need to view all of the
+  advertisements for this application to have merit, and finding out
+  more information about these advertisements is also helpful.}
+\UseCasePriority{High}
+\UseCaseStatus{}
+\UseCaseActors{Student}
+\UseCaseExtensions{}
+\UseCaseIncludes{Student Logs into System. Company Posts Application. }
+\UseCaseConditions{}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{Student views all advertisements, Student views
+  specific advertisement.}
+\UseCaseRisks{Advertisement may not be deleted immediately after a
+  successful applicant has been found so a student may apply for an
+  advertisement that is no longer available.}
+\UseCaseUserInterface{Application View Screen.}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Company Submits Application}
+\UseCaseDescription{A potential employer will submit an advertisement
+  for review by the Course Coordinator.}
+\UseCaseRationale{The submission must be available for any placements
+  to make their way onto the system after review by the Course Coordinator}
+\UseCasePriority{High}
+\UseCaseStatus{Incomplete Information}
+\UseCaseActors{Company}
+\UseCaseExtensions{}
+\UseCaseIncludes{}
+\UseCaseConditions{}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{Application is submitted for review.}
+\UseCaseRisks{A submission may be in an incorrect format that will not
+  be accepted by the Course Coordinator and may cause the company time
+  by having to redesign the advertisement - this may put some companys
+  off posting an advertisement.}
+\UseCaseUserInterface{Application Submission Screen.}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Company Edits Application}
+\UseCaseDescription{A potential employer can edit an advertisement.}
+\UseCaseRationale{The terms or specific details of an advertisement may
+  change during the time the advert is active so the company must be
+  able to edit this information.}
+\UseCasePriority{Medium}
+\UseCaseStatus{Incomplete Information}
+\UseCaseActors{Company, Course Coordinator.}
+\UseCaseExtensions{Company Submits Application. Course Coordinator
+  Reviews Advertisement.}
+\UseCaseIncludes{}
+\UseCaseConditions{Cannot edit an application that is not yet active.}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{Company Edits Application.}
+\UseCaseRisks{We do not know if the application has to be reviewed after
+  the edit has been made - this does make sense as if the edit was not
+  reviewed then the company could change the edit to something that is
+  no longer suitable. We do not know if there is a limit to the number
+  of edits the company can make before another advertisement has to be
+  submitted.}
+\UseCaseUserInterface{Course Coordinator Advertisement View Screen, 
+  Application Submission Screen.}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Course Coordinator Reviews Advertisement}
+\UseCaseDescription{As the original specification, the Course
+  Coordinator must review each individual advertisement before
+  publishing for viewing by students.}
+\UseCaseRationale{Specified inside the original specification.}
+\UseCasePriority{High}
+\UseCaseStatus{Incomplete Information}
+\UseCaseActors{Course Coordinator}
+\UseCaseExtensions{}
+\UseCaseIncludes{Company Submits Application}
+\UseCaseConditions{}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{Application passes review. Application fails review.}
+\UseCaseRisks{We currently do not know what the criteria for
+  applications are (except from there are no images). We do not know
+  what, if any, feedback is given to the applicants if they pass/fail
+  the review process.}
+\UseCaseUserInterface{Course Coordinator Advertisement View Screen.}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Student Notifies Course Coordinator of Successful 
+  Application}
+\UseCaseDescription{As the original specification, a successful student
+  must notify the course coordinator of their success and this must be
+  added to the database.}
+\UseCaseRationale{Specified inside the original specification.}
+\UseCasePriority{High}
+\UseCaseStatus{Incomplete Information}
+\UseCaseActors{Course Coordinator. Student}
+\UseCaseExtensions{Student Logs into System.}
+\UseCaseIncludes{Company Submits Application}
+\UseCaseConditions{Student must be a CS Student.}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{Student notifies Course Coordinator.}
+\UseCaseRisks{We do not know if this must integrate with the current 
+ database or not. We do not know if the student will recieve 
+ confirmation by the Coordinator of receipt of this notification. We 
+ do not know if the student has to show proof of success.}
+\UseCaseUserInterface{Student Notification Screen.}
+\end{UseCaseTemplate}
